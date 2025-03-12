@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <style>
+        body {
+            text-align: center;
+            font-family:  cursive;
+            background: linear-gradient(135deg, #db5091, #9f20a5);
+            color: #160752;
+            padding: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hidden {
+            display: none;
+        }
+        .letter-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        .letter-container {
+            background: rgb(254, 201, 227);
+            padding: 20px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 40%;
+            transform: scale(0);
+            transition: transform 0.5s ease-in-out;
+        }
+        .btn {
+            background-color: #f07681;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn:hover {
+            background-color: #bc0d50;
+            transform: scale(1.1);
+        }
+        .heart {
+            font-size: 30px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .cartoon-gif {
+            width: 100px;
+            height: auto;
+            animation: popIn 1s ease-in-out;
+        }
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* Music Icon */
+        .music-icon {
+            font-size: 40px;
+            cursor: pointer;
+            color: #000000;
+            margin-top: 20px;
+            display: inline-block;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heart">💖 Happy Birthday My Cutie Pie! 🧁💖</h1>
+    <p>💐Click the button below for a special message!💐 </p>
+    <button class="btn" onclick="showLetter()">💌</button>
+
+    <!-- Hidden Audio Element -->
+    <audio id="background-music" loop>
+        <source src="mymusic.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <!-- Clickable Music Icon -->
+    <div id="music-icon" class="music-icon" onclick="toggleMusic()">🎵</div>
+
+    <div id="letter-wrapper" class="letter-wrapper hidden">
+        <img src="https://i.pinimg.com/originals/70/11/4d/70114d826b655dc2e039fd1cf4ead227.gif" class="cartoon-gif" alt="Cute cartoon left">
+        
+        <div id="letter" class="letter-container">
+            <h2>💖 My Dearest Love 💖</h2>
+            <p>Happiest Birthday to you!🐸🎉</p>
+            <p> I hope you're doing well. Today is such a special day—your 20th birthday—and I just want to make you smile and feel loved.  
+                
+                My handsome boy, you are the most precious gift I have ever received from God, and you mean the world to me. Since the day we met, I haven’t been able to stop thinking about your smile, your laughter, and your beautiful eyes. The moment you entered my life, everything changed—I can't even imagine being apart from you.
+                Everything falls for a reason, and I have fallen for you. Among billions of people, my heart chose you. Your smile melts me, brightens my day, and makes everything feel right. It’s funny because I’ve never felt this way before.  
+
+If I could, I’d cover your face with kisses and tell you just how sweet you are—truly the sweetest person I’ve ever met. I’m beyond grateful to have you in my life.  
+                
+                I love listening to every little thing you share with me. I love the way you love me, the way you make me feel special, and the way you reassure me. You make me feel beautiful, even when I’m being silly or weird. No matter what, you stay by my side, praising me and making me feel like the most special person in the world. For that, I am forever grateful.❤️😚
+                
+                I pray that our bond  grows stronger with time, that no one and nothing can ever come between us. I love you so much, and I can’t even imagine a day without you. No matter what challenges come our way, I will always be by your side. You will never be alone—I will be with you from dusk till dawn, through every high and low.  
+                
+                I want to hold your hand when I am old and frail. I want to grow old with you and never let go of your hand.💕😌
+                You are my pretty boy, my world, my whole universe—the one I trust with my entire heart and soul. You are the boy I would do anything for, the one who holds a place in my heart that no one else ever could.  
+                
+                I love you more than words can express, and you will forever be my pretty boy. I pray that you find the strength to overcome all the silent battles you don’t speak of, and I hope you know that I will always be here for you.  
+                
+                I can’t even put into words how perfect you are. I love the way your voice softens when you tell me you love me, the way you listen so intently when I talk about everything that excites me—every little thing I did that day, every random thought that crosses my mind. But most of all, I love that I get to call you my boyfriend.  
+                
+                You are my everything, my love, my forever. I love you, my kuchupuchu💋😽.
+                
+                Happy birthday, my love! May this year bring you endless joy, success, and happiness. I love you always and forever. 💕</p>
+            <p> </p>
+            <img src="https://gifdb.com/images/high/rabbit-throwing-hearts-funny-love-yfi3ulgf8bkhe73t.gif" id="togepi-gif" alt="A cute picture of Togepi"/>
+        </div>
+
+        <img src="https://i.pinimg.com/originals/1e/c5/38/1ec5380287a1eb3abd0faa66febeb081.gif" class="cartoon-gif" alt="Cute cartoon right">
+    </div>
+
+    <script>
+        var music = document.getElementById("background-music");
+        var musicIcon = document.getElementById("music-icon");
+
+        function showLetter() {
+            var letterWrapper = document.getElementById("letter-wrapper");
+            letterWrapper.classList.remove("hidden");
+            document.getElementById("letter").style.transform = "scale(1)";
+
+            // Start playing music
+            music.play();
+            musicIcon.innerHTML = "🔇"; // Change icon when music starts
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                musicIcon.innerHTML = "🔇"; // Change icon to mute
+            } else {
+                music.pause();
+                musicIcon.innerHTML = "🎵"; // Change icon to play
+            }
+        }
+    </script>
+</body>
+</html>
